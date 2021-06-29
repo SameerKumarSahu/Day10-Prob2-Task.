@@ -9,3 +9,34 @@ x=$((RANDOM%2))
     else
           echo " Tail come "
     fi
+
+
+Heads=0
+Tails=0
+for (( i=0; i<=20;i++))
+do
+	x=$((RANDOM%2))
+        if [ $x -eq 0 ]
+
+        then
+               echo " Head come "
+                  ((Heads++))
+        else
+               echo " Tail come "
+		 ((Tails++))
+        fi
+
+done
+
+echo "Number of time Heads are" $Heads
+echo "Number of time Tails are" $Tails
+
+if [[ $Heads -gt $Tails ]]
+then
+	a=$(($Heads - $Tails))
+	echo "Heads Win by " $a
+else
+	b=$(($Tails - $Heads))
+        echo "Tails Win by " $b
+
+fi
